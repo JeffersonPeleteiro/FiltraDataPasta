@@ -51,12 +51,14 @@ namespace FiltraDataPasta
             gvFiles.DataSource = dt;
             gvFiles.DataBind();
 
-            // Header
-            gvFiles.HeaderRow.Cells[0].Text = "Nome do Arquivo";
-            gvFiles.HeaderRow.Cells[1].Text = "Extensão";
+            if (gvFiles.Rows.Count != 0)
+            {
+                // Header
+                gvFiles.HeaderRow.Cells[0].Text = "Nome do Arquivo";
+                gvFiles.HeaderRow.Cells[1].Text = "Extensão";
+            }
 
             // Items
-            //gvFiles.Columns[0].ItemStyle.Width = 300;
         }        
     }
 }
