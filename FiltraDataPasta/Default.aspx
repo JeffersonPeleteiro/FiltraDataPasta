@@ -10,30 +10,29 @@
 </head>
 <body>
     <div class="container">
+        <h1>Filtro de Arquivos por Pasta e Data</h1>
         <form id="form1" runat="server">
             <div class="form-group">
                 <label for="label">Path:  C:/</label>
                 <asp:TextBox ID="txtPath" runat="server" class="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
-                <label for="label">Data:</label>                
-                <asp:TextBox ID="txtData" runat="server" class="form-control"></asp:TextBox>
+                <label for="label">Data De:</label>                
+                <asp:TextBox ID="txtDataDe" runat="server" class="form-control"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <label for="label">Data Até:</label>                
+                <asp:TextBox ID="txtDataAte" runat="server" class="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
                 <asp:Button ID="btnProcessar" runat="server" Text="Processar" OnClick="btnProcessar_Click" class="btn btn-default" />
             </div>            
             <div class="form-group">
-                <asp:GridView ID="gvFiles" CellPadding="4" runat="server" AutoGenerateColumns="False" GridLines="None" ForeColor="#333333">
+                <asp:GridView ID="gvFiles" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                    <Columns>
-                        <asp:BoundField DataField="Text" HeaderText="Nom do Arquivo" >
-                        <ItemStyle Width="400px" />
-                        </asp:BoundField>
-                        <asp:BoundField HeaderText="Tipo" />
-                    </Columns>
                     <EditRowStyle BackColor="#999999" />
-                    <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
-                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="true" ForeColor="White" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
                     <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
