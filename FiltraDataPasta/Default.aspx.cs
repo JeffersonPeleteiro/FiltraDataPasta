@@ -26,11 +26,11 @@ namespace FiltraDataPasta
         {
             // Datas
             DateTime your_start_date = Convert.ToDateTime(txtDataDe.Text);
-            DateTime your_end_date = Convert.ToDateTime(txtDataAte.Text);
+            DateTime your_end_date = Convert.ToDateTime(txtDataAte.Text).AddHours(23).AddMinutes(59).AddSeconds(59);
 
             // Caminho da Pasta
             DirectoryInfo pathFolder = new DirectoryInfo(Path.GetPathRoot(Environment.SystemDirectory) + txtPath.Text);
-            FileInfo[] filesLoc = pathFolder.GetFiles().Where(x => x.CreationTime >= (your_start_date) && x.CreationTime <= (your_end_date)).ToArray();
+            FileInfo[] filesLoc = pathFolder.GetFiles().Where(x => x.LastWriteTime >= (your_start_date) && x.LastWriteTime <= (your_end_date)).ToArray();
 
             // Criando os Registros para adicionar ao GridView
             DataTable dt = new DataTable();
